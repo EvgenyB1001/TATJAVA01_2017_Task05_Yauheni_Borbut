@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu:menu xmlns:menu="http://www.epam.com/menu">
+    <cold_snacks>
+        <dish id="1">
+            <photo>./photos/dish_1.jpg</photo>
+            <name>Ассорти рыбное</name>
+            <portion>
+                <mass>100</mass>
+                <mass>15</mass>
+                <mass>15</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Слабосоленая форель, семга</meal_description>
+                    <meal_price>100</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="2">
+            <photo>./photos/dish_2.jpg</photo>
+            <name>Тарталетки с красной икрой</name>
+            <portion>
+                <mass>60</mass>
+                <mass>50</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Тарталетки с красной икрой</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="3">
+            <photo>./photos/dish_3.jpg</photo>
+            <name>Закуска по-русски</name>
+            <portion>
+                <mass>70</mass>
+                <mass>50</mass>
+                <mass>2</mass>
+                <mass>10</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Кусочки атлантической сельди с отварным картофелем, луком, лимоном и зеленью</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="4">
+            <photo>./photos/dish_4.jpg</photo>
+            <name>Куриный рулет</name>
+            <portion>
+                <mass>100</mass>
+                <mass>5</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Куриный рулет собственного производства</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="5">
+            <photo>./photos/dish_5.jpg</photo>
+            <name>Бастурма</name>
+            <portion>
+                <mass>50</mass>
+                <mass>5</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Вяленая вырезка из говяжьего мяса</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="6">
+            <photo>./photos/dish_6.jpg</photo>
+            <name>Ассорти мясное</name>
+            <portion>
+                <mass>100</mass>
+                <mass>30</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Нарезка из буженины, бастурмы, куриного рулета собственного производства и
+                        колбасы
+                    </meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="7">
+            <photo>./photos/dish_7.jpg</photo>
+            <name>Язык отварной</name>
+            <portion>
+                <mass>80</mass>
+                <mass>20</mass>
+                <mass>1</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Нарезка нежного говяжьего мяса, подается с хреном</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="8">
+            <photo>./photos/dish_8.jpg</photo>
+            <name>Ассорти баклажаны</name>
+            <portion>
+                <mass>100</mass>
+                <mass>5</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Жареные баклажаны с помидорами</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+                <description>
+                    <meal_description>Жареные баклажаны с чесноком</meal_description>
+                    <meal_price>40</meal_price>
+                </description>
+                <description>
+                    <meal_description>Жареные баклажаны с орехами</meal_description>
+                    <meal_price>70</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="9">
+            <photo>./photos/dish_9.jpg</photo>
+            <name>Соленья по-домашнему</name>
+            <portion>
+                <mass>150</mass>
+                <mass>10</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Маринованные овощи</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="10">
+            <photo>./photos/dish_10.jpg</photo>
+            <name>Бабушкины угощения</name>
+            <portion>
+                <mass>120</mass>
+                <mass>20</mass>
+                <mass>10</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Ассорти из маринованных грибов</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="11">
+            <photo>./photos/dish_11.jpg</photo>
+            <name>Сырная тарелка</name>
+            <portion>
+                <mass>100</mass>
+                <mass>5</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Сыры Чечел, дор блю, российский, мраморный</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="12">
+            <photo>./photos/dish_12.jpg</photo>
+            <name>Брынза</name>
+            <portion>
+                <mass>75</mass>
+                <mass>5</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Рассольный сыр, изготавливаемый из овечьего молока</meal_description>
+                    <meal_price>50</meal_price>
+                </description>
+            </meal>
+        </dish>
+    </cold_snacks>
+    <hot_snacks>
+        <dish id="13">
+            <photo>./photos/dish_13.jpg</photo>
+            <name>Жульен</name>
+            <portion>
+                <mass>120</mass>
+                <mass>1</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Жульен с курицей</meal_description>
+                    <meal_price>145</meal_price>
+                </description>
+                <description>
+                    <meal_description>Жульен с грибами</meal_description>
+                    <meal_price>155</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="14">
+            <photo>./photos/dish_14.jpg</photo>
+            <name>Креветки</name>
+            <portion>
+                <mass>120</mass>
+                <mass>30</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Креветки отварные</meal_description>
+                    <meal_price>135</meal_price>
+                </description>
+                <description>
+                    <meal_description>Креветки жареные</meal_description>
+                    <meal_price>155</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="15">
+            <photo>./photos/dish_15.jpg</photo>
+            <name>Эскарго</name>
+            <portion>
+                <count>12</count>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Виноградные улитки, фаршированные по бургундски</meal_description>
+                    <meal_price>230</meal_price>
+                </description>
+            </meal>
+        </dish>
+    </hot_snacks>
+    <breakfasts>
+        <dish id="16">
+            <photo>./photos/dish_16.jpg</photo>
+            <name>Глазунья</name>
+            <portion>
+                <mass>150</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>2 яйца(на выбор: ветчина, сыр, помидоры)</meal_description>
+                    <meal_price>100</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="17">
+            <photo>./photos/dish_17.jpg</photo>
+            <name>Омлет</name>
+            <portion>
+                <mass>100</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description></meal_description>
+                    <meal_price>100</meal_price>
+                </description>
+            </meal>
+        </dish>
+        <dish id="18">
+            <photo>./photos/dish_18.jpg</photo>
+            <name>Блинчики с мясом</name>
+            <portion>
+                <mass>1500</mass>
+            </portion>
+            <meal>
+                <description>
+                    <meal_description>Жареные блинчики с мясом</meal_description>
+                    <meal_price>100</meal_price>
+                </description>
+            </meal>
+        </dish>
+    </breakfasts>
+    <salads>
+    </salads>
+    <soups>
+    </soups>
+    <fish_dishes>
+    </fish_dishes>
+    <meat_dishes>
+    </meat_dishes>
+    <garnishes>
+    </garnishes>
+    <grill_dishes>
+    </grill_dishes>
+    <from_the_chief>
+    </from_the_chief>
+    <attachment>
+    </attachment>
+    <deserts>
+    </deserts>
+</menu:menu>

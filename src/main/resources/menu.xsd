@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.epam.com/menu"
+        xmlns:ns="http://www.epam.com/menu">
+    <element name="menu">
+        <complexType>
+            <all>
+                <element name="cold_snacks" type="ns:dish"/>
+                <element name="hot_snacks" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="breakfasts" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="salads" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="soups" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="fish_dishes" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="meat_dishes" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="garnishes" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="grill_dishes" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="from_the_chief" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="attachment" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+                <element name="deserts" type="ns:dish" minOccurs="1" maxOccurs="1"/>
+            </all>
+        </complexType>
+    </element>
+    <complexType name="dish">
+        <sequence>
+            <element name="dish" type="ns:category" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="category">
+        <sequence>
+            <element name="photo" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="name" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="portion" type="ns:portion" minOccurs="1" maxOccurs="1"/>
+            <element name="meal" type="ns:meal" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+        <attribute name="id" type="integer"/>
+    </complexType>
+    <complexType name="meal">
+        <sequence>
+            <element name="description" type="ns:description" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="description">
+        <all>
+            <element name="meal_description" type="string" minOccurs="1" maxOccurs="1"/>
+            <element name="meal_price" type="ns:currency" minOccurs="1" maxOccurs="1"/>
+        </all>
+    </complexType>
+    <complexType name="portion">
+        <choice>
+            <element name="mass" type="integer" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="count" type="integer" minOccurs="1" maxOccurs="1"/>
+        </choice>
+    </complexType>
+    <simpleType name="currency">
+        <restriction base="string">
+            <pattern value="[\d]+.?[\d]*"/>
+        </restriction>
+    </simpleType>
+</schema>
