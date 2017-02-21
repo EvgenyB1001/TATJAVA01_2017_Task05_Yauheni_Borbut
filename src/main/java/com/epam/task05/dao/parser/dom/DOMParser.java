@@ -5,7 +5,7 @@ import com.epam.task05.bean.MenuTags;
 import com.epam.task05.bean.exception.MenuException;
 import com.epam.task05.dao.parser.dom.exception.DOMException;
 import com.epam.task05.dao.parser.Parser;
-import com.epam.task05.dao.exception.DAOException;
+import com.epam.task05.dao.parser.exception.ParserException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -61,10 +61,10 @@ public class DOMParser implements Parser {
      *
      * @param xmlPath path to XML file
      * @return bean result list of dishes
-     * @throws DAOException if there are exceptions during parsing
+     * @throws ParserException if there are exceptions during parsing
      */
     @Override
-    public HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws DAOException {
+    public HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws ParserException {
         try {
             com.sun.org.apache.xerces.internal.parsers.DOMParser parser = new com.sun.org.apache.xerces.internal.parsers.DOMParser();
             parser.parse(xmlPath);
@@ -87,7 +87,7 @@ public class DOMParser implements Parser {
                 menu.put(category, dishes);
             }
         } catch (SAXException | DOMException | IOException | MenuException e) {
-            throw new DAOException(e);
+            throw new ParserException(e);
         }
 
         return menu;

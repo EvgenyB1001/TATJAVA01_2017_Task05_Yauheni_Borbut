@@ -5,6 +5,7 @@ import com.epam.task05.dao.DAOMenu;
 import com.epam.task05.dao.exception.DAOException;
 import com.epam.task05.dao.parser.Parser;
 import com.epam.task05.dao.parser.ParserFactory;
+import com.epam.task05.dao.parser.exception.ParserException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,9 +17,16 @@ public class DAOMenuXML implements DAOMenu{
 
     @Override
     public HashMap<String, ArrayList<Dish>> read(String filePath, String parserName) throws DAOException {
-        ParserFactory factory = ParserFactory.getInstance();
-        Parser parser = factory.getParser(parserName);
-        HashMap<String, ArrayList<Dish>> menu = parser.parseXML(filePath);
+
+        HashMap<String, ArrayList<Dish>> menu;
+        try {
+            ParserFactory factory = ParserFactory.getInstance();
+            Parser parser = factory.getParser(parserName);
+            menu = parser.parseXML(filePath);
+        } catch (ParserException e) {
+            throw new DAOException(e);
+        }
+
         return menu;
     }
 }

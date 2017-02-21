@@ -2,6 +2,7 @@ package com.epam.task05.dao.parser;
 
 import com.epam.task05.bean.Dish;
 import com.epam.task05.dao.exception.DAOException;
+import com.epam.task05.dao.parser.exception.ParserException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,5 +12,5 @@ import java.util.HashMap;
  */
 public interface Parser {
 
-    HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws DAOException;
+    HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws ParserException;
 }

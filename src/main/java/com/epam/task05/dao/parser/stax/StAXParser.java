@@ -4,7 +4,7 @@ import com.epam.task05.bean.Dish;
 import com.epam.task05.bean.MenuTags;
 import com.epam.task05.bean.exception.MenuException;
 import com.epam.task05.dao.parser.Parser;
-import com.epam.task05.dao.exception.DAOException;
+import com.epam.task05.dao.parser.exception.ParserException;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -69,9 +69,9 @@ public class StAXParser implements Parser {
      *
      * @param xmlPath path to XML file
      * @return bean result list of dishes
-     * @throws DAOException if there are exceptions during parsing
+     * @throws ParserException if there are exceptions during parsing
      */
-    public HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws DAOException {
+    public HashMap<String, ArrayList<Dish>> parseXML(String xmlPath) throws ParserException {
         try {
             InputStream inputStream = new FileInputStream(xmlPath);
             XMLStreamReader reader = factory.createXMLStreamReader(inputStream);
@@ -116,13 +116,13 @@ public class StAXParser implements Parser {
                 }
             }
         } catch (FileNotFoundException | XMLStreamException | MenuException e) {
-            throw new DAOException(e);
+            throw new ParserException(e);
         }
 
         return menu;
     }
 
-    private void charactersAction(String text) throws MenuException, DAOException {
+    private void charactersAction(String text) throws MenuException, ParserException {
 
         if (tagName.equals(MenuTags.MEAL_DESCRIPTION)) {
             description = text;
@@ -140,13 +140,13 @@ public class StAXParser implements Parser {
             try {
                 dish.setPortionCount(Integer.parseInt(text));
             } catch (NumberFormatException e) {
-                throw new DAOException(e);
+                throw new ParserException(e);
             }
         } else if (tagName.equals(MenuTags.PORTION_MASS)) {
             try {
                 dish.addPortionMass(Integer.parseInt(text));
             } catch (NumberFormatException e) {
-                throw new DAOException(e);
+                throw new ParserException(e);
             }
         }
     }
