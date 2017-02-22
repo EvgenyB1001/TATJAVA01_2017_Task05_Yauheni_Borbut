@@ -2,7 +2,7 @@ package com.epam.task05.dao.parser.sax.handler;
 
 import com.epam.task05.bean.Dish;
 import com.epam.task05.bean.MenuTags;
-import com.epam.task05.bean.exception.MenuException;
+import com.epam.task05.exception.MenuException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -81,7 +81,6 @@ public class SAXHandlerMenu extends DefaultHandler{
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-
         try {
             if (qName.equals(MenuTags.MEAL_DESCRIPTION)) {
                 description = stringBuilder.toString();
@@ -90,8 +89,11 @@ public class SAXHandlerMenu extends DefaultHandler{
                 price = stringBuilder.toString();
 
             } else if (qName.equals(MenuTags.DESCRIPTION)) {
-                dish.addDescription(description, price);
-
+                try {
+                    dish.addDescription(description, Double.parseDouble(price));
+                } catch (NumberFormatException e) {
+                    throw new SAXException(e);
+                }
             } else if (qName.equals(MenuTags.PHOTO)) {
                 dish.setPhotoURL(stringBuilder.toString());
 
@@ -107,7 +109,7 @@ public class SAXHandlerMenu extends DefaultHandler{
             } else if (qName.equals(MenuTags.DISH)) {
                 dishes.add(dish);
             }
-        } catch (NumberFormatException | MenuException e) {
+        } catch (NumberFormatException e) {
             throw new SAXException(e);
         }
 

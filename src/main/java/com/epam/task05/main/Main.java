@@ -13,8 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
         MenuPerformer performer = new MenuPerformer();
-        //performer.displayMenu(COMMAND_NAME, XML_PATH, SAX_PARSER_NAME);
+        performer.displayMenu(COMMAND_NAME, XML_PATH, SAX_PARSER_NAME);
         //performer.displayMenu(COMMAND_NAME, XML_PATH, STAX_PARSER_NAME);
-        performer.displayMenu(COMMAND_NAME, XML_PATH, DOM_PARSER_NAME);
+        //performer.displayMenu(COMMAND_NAME, XML_PATH, DOM_PARSER_NAME);
     }
 }

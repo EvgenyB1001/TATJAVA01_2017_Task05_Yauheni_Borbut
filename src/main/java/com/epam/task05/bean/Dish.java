@@ -1,7 +1,5 @@
 package com.epam.task05.bean;
 
-import com.epam.task05.bean.exception.MenuException;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,9 +22,6 @@ public class Dish implements Serializable {
      */
     private HashMap<String, Double> description = new HashMap<>();
 
-    private static final String INIT_EXCEPTION_TEXT = "Argument is not initialized";
-    private static final String INVALID_NUMBER_FORMAT_TEXT = "Number format of price is not valid";
-
     public Dish() {
         super();
     }
@@ -39,13 +34,8 @@ public class Dish implements Serializable {
      * Method sets URL of image of current dish
      *
      * @param photoURL URL to image
-     * @throws MenuException if <code>photoURL</code> isn't initialized
      */
-    public void setPhotoURL(String photoURL) throws MenuException {
-        if (photoURL == null) {
-            throw new MenuException(INIT_EXCEPTION_TEXT);
-        }
-
+    public void setPhotoURL(String photoURL){
         this.photoURL = photoURL;
     }
 
@@ -53,13 +43,8 @@ public class Dish implements Serializable {
      * Method sets name of current dish
      *
      * @param name name of current dish
-     * @throws MenuException if <code>name</code> isn't initialized
      */
-    public void setName(String name) throws MenuException {
-        if (name == null) {
-            throw new MenuException(INIT_EXCEPTION_TEXT);
-        }
-
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -81,20 +66,10 @@ public class Dish implements Serializable {
      *
      * @param mealDescription description of current dish
      * @param argPrice           price of current dish
-     * @throws MenuException if <code>price</code> or <code>mealDescription</code> isn't initialized
      */
-    public void addDescription(String mealDescription, String argPrice) throws MenuException {
-        if (mealDescription == null || argPrice == null) {
-            throw new MenuException(INIT_EXCEPTION_TEXT);
-        }
-
+    public void addDescription(String mealDescription, double argPrice) {
         double price;
-
-        try {
-            price = Double.parseDouble(argPrice);
-        } catch (NumberFormatException e) {
-            throw new MenuException(INVALID_NUMBER_FORMAT_TEXT);
-        }
+        price = argPrice;
 
         description.put(mealDescription, price);
     }

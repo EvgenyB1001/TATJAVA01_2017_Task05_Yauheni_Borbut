@@ -2,7 +2,7 @@ package com.epam.task05.dao.parser.stax;
 
 import com.epam.task05.bean.Dish;
 import com.epam.task05.bean.MenuTags;
-import com.epam.task05.bean.exception.MenuException;
+import com.epam.task05.exception.MenuException;
 import com.epam.task05.dao.parser.Parser;
 import com.epam.task05.dao.parser.exception.ParserException;
 
@@ -101,7 +101,7 @@ public class StAXParser implements Parser {
                 } else if (type == StAXConstants.END_ELEMENT) {
                     tagName = reader.getLocalName();
                     if (tagName.equals(MenuTags.DESCRIPTION)) {
-                        dish.addDescription(description, price);
+                        dish.addDescription(description, Double.parseDouble(price));
 
                     } else if (tagName.equals(MenuTags.DISH)) {
                         dishes.add(dish);

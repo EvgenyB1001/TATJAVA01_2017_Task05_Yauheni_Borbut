@@ -1,4 +1,4 @@
-package com.epam.task05.bean.exception;
+package com.epam.task05.exception;
 
 /**
  * Created by Yauheni_Borbut on 2/15/2017.

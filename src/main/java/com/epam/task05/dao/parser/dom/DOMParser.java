@@ -2,7 +2,7 @@ package com.epam.task05.dao.parser.dom;
 
 import com.epam.task05.bean.Dish;
 import com.epam.task05.bean.MenuTags;
-import com.epam.task05.bean.exception.MenuException;
+import com.epam.task05.exception.MenuException;
 import com.epam.task05.dao.parser.dom.exception.DOMException;
 import com.epam.task05.dao.parser.Parser;
 import com.epam.task05.dao.parser.exception.ParserException;
@@ -142,7 +142,6 @@ public class DOMParser implements Parser {
      *
      * @param root root element to create node list
      * @param dish object of dish to set description and price
-     * @throws MenuException if there are errors in adding description
      * @throws DOMException if there errors in reading XML file
      */
     private void setDescriptionAndPrice(Dish dish, Element root) throws MenuException, DOMException {
@@ -153,7 +152,11 @@ public class DOMParser implements Parser {
                     MenuTags.MEAL_DESCRIPTION).getTextContent().trim();
             String mealPrice = getSingleElement(descriptionElement,
                     MenuTags.MEAL_PRICE).getTextContent().trim();
-            dish.addDescription(mealDescription, mealPrice);
+            try {
+                dish.addDescription(mealDescription, Double.parseDouble(mealPrice));
+            } catch (NumberFormatException e) {
+                throw new MenuException(e);
+            }
         }
     }
 }
